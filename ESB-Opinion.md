@@ -65,6 +65,8 @@ Decomposition of ESB integration services based on business criteria to higher o
 
 In a choreography approach the central controller service is replaced by the asynchronous flow of events over a message bus. These events are picked up by interested services and appropriate actions are taken which maybe message enrichment, transformation, etc,. Since business process flows are now transformed to event and activity flows, business activity monitoring becomes critical. Compensation of failed transactions and exc exception actions should be incorporated into buisiness logic. A user journey now becomes a series of async interactions. Additional work is needed to ensure that you can monitor and track that the right things have happened.
 
+---
+
 ## TL;DR Specific Recommendations for Citi-Group
 
 1. UI templating for responsive design should be restricted to server side using Spring Web MVC and next generation service template technologies like JHipster for Angular.js. Follow the Netflix model of adapting device response at the edge tier using a software API proxy like Zuul. An application client, such as a native mobile application, could make RESTful HTTP requests to the individual services On the surface this might seem attractive. However, there is likely to be a significant mismatch in granularity between the APIs of the individual services and data required by the clients. A much better approach is for clients to make a small number of requests per-page to an API gateway.
@@ -74,3 +76,5 @@ In a choreography approach the central controller service is replaced by the asy
 3. Where existing ESB services do not already exist, start greenfield net new development with a pure microservices based approach. This will accelerate development to target state and generate a collateral of slimmed down domain based replaceable and reusable cloud native services. Support for horizontal concerns will be provided by Cloud Foundry. Integration concerns will be handled by implementing the app with Spring technologies and forward looking design patterns like CQRS and event sourcing.
 
 4. Create sample business process, and app code repositories as well as an internal knowledge base around Spring technologies like Spring Integration, Spring Data, Spring Cloud and Spring Batch. As developers start writing apps on cloud native platforms they need to be equipped in understanding the tradeoffs in writing distributed systems at scale otherwise the result will be distributed balls of mud.
+
+---
